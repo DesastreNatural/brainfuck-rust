@@ -1,1 +1,3 @@
-# brainfuck-rust
+### brainfuck-rust
+cargo build --release
+

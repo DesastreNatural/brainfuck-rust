@@ -122,6 +122,7 @@ pub mod interpreter {
                 self.eval_ptr();
                 self.code_ptr += 1;
             }
+            self.memory_debug();
             print!("\n");
         }
     }
