@@ -1,8 +1,11 @@
 pub mod interpreter {
 
+
     use getch::Getch;
     use std::process::exit;
     use std::io::{self, Write};
+    use log::{debug, error, log_enabled, info, Level};
+
     pub struct Interpreter {
         code_source: Vec<char>,
         code_ptr: i32,
@@ -15,6 +18,7 @@ pub mod interpreter {
     impl Interpreter {
         pub fn created(code: Vec<char>)-> Interpreter {
             println!("initializing interpreter with: {:?}",code);
+            env_logger::init();
             Interpreter {
                 code_source: code,
                 code_ptr: 0,
