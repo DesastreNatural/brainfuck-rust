@@ -14,7 +14,6 @@ use interpreter::interpreter::Interpreter;
 fn main() {
     let args = Cli::parse();
     if Path::new(args.path.as_os_str()).exists() {
-        println!("path: {:?}", args.path);
         let raw_data = fs::read_to_string(args.path).expect("Unable to read file");
         let allowed_tokens: Vec<char> = ['<','>','+','-','[',']','.',','].to_vec();
         let data: String = raw_data.chars().filter(|&c| allowed_tokens.contains(&c)).collect();
